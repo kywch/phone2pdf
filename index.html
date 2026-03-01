@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>phone2pdf</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>phone2pdf</h1>
+    <p>Snap a doc, get a PDF</p>
+  </header>
+
+  <main>
+    <section id="capture-section">
+      <button id="capture-btn" type="button">Take Photo</button>
+      <input type="file" id="file-input" accept="image/*" capture="environment" hidden>
+    </section>
+
+    <section id="preview-section" hidden>
+      <div id="preview-container">
+        <canvas id="preview-canvas"></canvas>
+      </div>
+
+      <div id="controls">
+        <label for="contrast-slider">Scan Intensity</label>
+        <input type="range" id="contrast-slider" min="0" max="100" value="50">
+      </div>
+
+      <div id="actions">
+        <button id="download-btn" type="button">Download PDF</button>
+        <button id="share-btn" type="button">Share / Email</button>
+        <button id="retake-btn" type="button" class="secondary">Retake</button>
+      </div>
+    </section>
+  </main>
+
+  <canvas id="process-canvas" hidden></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
